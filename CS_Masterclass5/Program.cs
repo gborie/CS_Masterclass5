@@ -10,11 +10,15 @@ namespace CS_Masterclass5
     {
         static void Main(string[] args)
         {
-            int counter = 0;
-            while(counter < 10)
+
+            for(int counter = 0; counter < 10; counter++)
             {
                 Console.WriteLine(counter);
-                counter++;
+                if(counter == 3)
+                {
+                    Console.WriteLine("At 3 we stop!");
+                    break;
+                }
             }
             Console.Read();
         }
