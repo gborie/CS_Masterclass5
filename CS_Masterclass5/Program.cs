@@ -13,12 +13,13 @@ namespace CS_Masterclass5
 
             for(int counter = 0; counter < 10; counter++)
             {
-                Console.WriteLine(counter);
-                if(counter == 3)
+
+                if(counter % 2 == 0)
                 {
-                    Console.WriteLine("At 3 we stop!");
-                    break;
+                    Console.WriteLine("Now comes an odd number");
+                    continue;
                 }
+                Console.WriteLine(counter);
             }
             Console.Read();
         }
