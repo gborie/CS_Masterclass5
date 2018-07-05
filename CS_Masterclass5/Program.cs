@@ -10,18 +10,44 @@ namespace CS_Masterclass5
     {
         static void Main(string[] args)
         {
+            int counter = 0;
+            int next;
+            string input;
+            double sum = 0;
+            double currentMark = 0;
 
-            for(int counter = 0; counter < 10; counter++)
+            do
             {
-
-                if(counter % 2 == 0)
+                Console.WriteLine("Enter mark");
+                next = counter + 1;
+                Console.WriteLine("entry number " + next);
+                input = Console.ReadLine();
+        
+                if (double.TryParse(input, out currentMark) && currentMark >= 0 && currentMark <= 20)
                 {
-                    Console.WriteLine("Now comes an odd number");
+                    sum += currentMark;
+                    counter++;
+                    Console.WriteLine();
+                    Console.WriteLine("Mark is " + input);
+                }
+                else if (input == "-1")
+                {
+                    double average = sum / counter;
+                    Console.WriteLine();
+                    Console.WriteLine("Average is {0}", average);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Error - Try again");
                     continue;
                 }
-                Console.WriteLine(counter);
             }
+            while (true);
+
             Console.Read();
+
         }
     }
 }
